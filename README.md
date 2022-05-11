@@ -1,7 +1,6 @@
 
-<img id="Img_CSharp" src="./Images/CSharp.png" width=128 height=72> 
-
-경기게임마이스터고 <br>
+경기게임마이스터고 
+<img id="Img_CSharp" src="./Images/CSharp.png" width=128 height=72 style="position: absolute; padding-left: 30%;"> <br>
 학생을 위한 <br>
 C# 프로그래밍 입문
 =================
