@@ -1,4 +1,4 @@
-<img id="Img_CSharp" src="./Images/CSharp.png" width=128 height=72 style="position: absolute; padding-left: 80%; padding-top: 5%;">
+<img id="Img_CSharp" src="./Images/CSharp.png" width=128 height=72>
 
 경기게임마이스터고  <br>
 학생을 위한 <br>
