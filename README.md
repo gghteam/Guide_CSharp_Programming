@@ -1,6 +1,5 @@
 
 <img id="Img_CSharp" src="./Images/CSharp.png" width=128 height=72> 
-<br>
 
 경기게임마이스터고 <br>
 학생을 위한 <br>
