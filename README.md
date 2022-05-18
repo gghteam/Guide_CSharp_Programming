@@ -35,17 +35,17 @@ C# 프로그래밍 입문
 <summary><a href="#응용-문법"> 3장. 응용 문법 </a></summary>
 <br>
 
+- [응용 문법 - 1](#응용-문법---1)
 - [응용 문법 - 2](#응용-문법---2)
-- [응용 문법 - 3](#응용-문법---3)
 
 </details>
 
 <details>
-<summary><a href="#객체지향-프로그래밍(OOP)"> 4장. 객체지향 프로그래밍(OOP) </a></summary>
+<summary><a href="#객체지향-프로그래밍"> 4장. 객체지향 프로그래밍(OOP) </a></summary>
 <br>
 
+- [객체지향 프로그래밍 - 1](#객체지향-프로그래밍---1)
 - [객체지향 프로그래밍 - 2](#객체지향-프로그래밍---2)
-- [객체지향 프로그래밍 - 3](#객체지향-프로그래밍---3)
 
 </details>
 
@@ -53,8 +53,8 @@ C# 프로그래밍 입문
 <summary><a href="#응용-라이브러리"> 5장. 응용 라이브러리 </a></summary>
 <br>
 
+- [응용 라이브러리 - 1](#응용-라이브러리---1)
 - [응용 라이브러리 - 2](#응용-라이브러리---2)
-- [응용 라이브러리 - 3](#응용-라이브러리---3)
 
 </details>
 
@@ -91,13 +91,11 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
 + # 어떻게 공부하면 좋겠습니까
 > 어떻게 공부하면 좋은가?
 
-<img src="./Images/Easy.png" width=5% height=5% /> 
-<img src="./Images/Normal.png" width=5% height=5% /> 
-<img src="./Images/Difficult.png" width=5% height=5% /> 
+<img src="./Images/Easy.png" width=5% height=5% /> &nbsp; <img src="./Images/Normal.png" width=5% height=5% /> &nbsp; <img src="./Images/Difficult.png" width=5% height=5% /> 
 
 장마다 난이도를 나누어 두었습니다. 자신에 맞는 공부를 하고 싶다면 아래의 방식을 추천합니다.
 
-프로그래밍 언어를 처음 접하는 분이라면 일단, <img src="./Images/Easy.png" width=5% height=5% /> 을 보는 것을 추천합니다.
+프로그래밍 언어를 처음 접하는 분이라면 일단, <img src="./Images/Easy.png" width=5% height=5% />을 보는 것을 추천합니다.
 
 프로그래밍 언어를 어느정도 공부하여 기초 문법을 쉽게 이해할 수 있다면 <img src="./Images/Easy.png" width=5% height=5% />을 가볍게 둘러보시고 <img src="./Images/Normal.png" width=5% height=5% />을 읽은 뒤, <img src="./Images/Difficult.png" width=5% height=5% />을 보시면 됩니다.
 
@@ -195,7 +193,7 @@ class HelloWorld
 
 ---
 
-# 객체지향 프로그래밍(OOP)
+# 객체지향 프로그래밍
 > 객체지향 프로그래밍(OOP) 설명
 
 + # 객체지향 프로그래밍 - 1
