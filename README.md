@@ -468,7 +468,10 @@ class ArrayAllocate
 
 (변수명)[(index)] 의 형식으로 접근할 수 있으며, index는 0에서 시작하여 (배열의 크기 - 1) 까지의 범위로 나타냅니다.
 
-<img src="./Images/Array.png" width=100% height=100% />
+<img src="./Images/Array.png" width=60% height=60% />
+
+<br>
+
 
 ```cs
 
@@ -482,8 +485,8 @@ class ArrayIndex
         array[0] = 4; // array의 첫 번째 공간에 4 저장.
         array[1] = 2; // array의 두 번째 공간에 2 저장.
 
-        Console.WriteLine(array[0]);
-        Console.WriteLine(array[1]);
+        Console.WriteLine(array[0]); // array의 첫 번째 공간에 저장된 4를 출력
+        Console.WriteLine(array[1]); // array의 두 번째 공간에 저장된 2를 출력
     }
 }
 
@@ -493,6 +496,8 @@ class ArrayIndex
 */
 
 ```
+
+index를 이용하여 array의 요소에 접근하여 배열을 사용하는 방법을 알아보았습니다.
 
 + # 함수
 > 
