@@ -347,6 +347,7 @@ class Variable
 ||+|양의 부호|단항연산자||
 ||-|음의 부호|단항연산자||
 ||sizeof|메모리 크기|기타||
+||new|메모리 할당|기타||
 ||()|캐스트 연산자|기타||
 ||++|전위 증가|단항연산자||
 ||--|전위 감소|단항연산자||
@@ -383,9 +384,118 @@ class Variable
 |15|throw|예외 연산자|기타|<img src="./Images/RightArrow.png" width=50% height=50% />|
 |16|,|쉼표 연산자|기타||
 
-+ # 배열
-> 
+## new 연산자
 
+new 연산자는 데이터를 저장하기 위한 공간을 할당하는 연산자 입니다.
+
+```cs
+
+using System; // System 네임스페이스 참조
+
+class NewOperator
+{
+    public static void Main(string[] args)
+    {
+        int a = 1; // a에 1을 저장.
+        Console.Write(a); // a에 저장된 값을 출력.
+    }
+}
+
+/*
+    실행 결과 : 1
+*/
+
+```
+
+사실 위의 코드는 간략화되어 있습니다.
+
+저장 공간을 할당하는 구문을 생략한 것입니다.
+
+```cs
+
+using System; // System 네임스페이스 참조
+
+class NewOperator
+{
+    public static void Main(string[] args)
+    {
+        int a = new int(); // a에 int 자료형에 알맞은 공간을 할당.
+        a = 1; // a에 1을 저장.
+        Console.Write(a); // a에 저장된 값을 출력.
+    }
+}
+
+/*
+    실행 결과 : 1
+*/
+
+```
+
+생략하지 않을 경우, 이처럼 나타낼 수 있습니다.
+
++ # 배열
+> 변수의 집합
+
+배열이란 다수의 변수를 접근하기 쉽도록 집합시킨 것입니다.
+
+[]은 배열을 나타내는 연산자임과 동시에 인덱서 연산자입니다.
+
+(자료형)[] (ex : int[], string[], ...) 의 모습으로 하나의 배열 자료형이 됩니다. 이러한 배열 자료형은 일반적인 자료형과 달리 배열의 형태를 띄게 됩니다.
+
+배열의 공간을 할당하는데는 일반자료형과는 조금 다른 형식을 사용합니다.
+
+```cs
+
+using System; // System 네임스페이스 참조
+
+class ArrayAllocate
+{
+    public static void Main(string[] args)
+    {
+        int[] array = new int[2]; // 2크기의 int 배열의 공간을 할당.
+    }
+}
+
+/*
+    실행 결과 :
+*/
+
+```
+
+배열은 new 연산자를 사용하여 [] 안에 배열의 크기를 넣어 크기만큼의 공간을 할당합니다.
+
+이렇게 만들어 낸 배열의 저장 공간에 접근하기 위해선 각각의 공간의 위치를 나타내는 수(index)를 이용해야합니다.
+
+(변수명)[(index)] 의 형식으로 접근할 수 있으며, index는 0에서 시작하여 (배열의 크기 - 1) 까지의 범위로 나타냅니다.
+
+<img src="./Images/Array.png" width=100% height=100% />
+
+```cs
+
+using System; // System 네임스페이스 참조
+
+class ArrayIndex
+{
+    public static void Main(string[] args)
+    {
+        int[] array = new int[2]; // 2크기의 int 배열의 공간을 할당.
+        array[0] = 4; // array의 첫 번째 공간에 4 저장.
+        array[1] = 2; // array의 두 번째 공간에 2 저장.
+
+        Console.WriteLine(array[0]);
+        Console.WriteLine(array[1]);
+    }
+}
+
+/*
+    실행 결과 : 4
+    2
+*/
+
+```
+
++ # 함수
+> 
 
 ---
 
