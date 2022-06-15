@@ -549,12 +549,12 @@ class Function
         Console.Write(square); // square에 저장된 256을 출력.
     }
 
-    int Sum(int a, int b)
+    static int Sum(int a, int b)
     {
         return a + b; // a + b의 값을 반환.
     }
 
-    int Square(int a)
+    static int Square(int a)
     {
         return a * a; // a * a의 값을 반환.
     }
@@ -617,6 +617,13 @@ class MultiDimension
 
 ```
 
+|[n, m]|[0, m]|[1, m]|[2, m]|[3, m]|
+|-|-|-|-|-|
+|[n, 0]|1|5|9|13|
+|[n, 1]|2|6|10|14|
+|[n, 2]|3|7|11|15|
+|[n, 3]|4|8|12|16|
+
 이러한 다차원 배열을 이용하여 체계적인 구조의 데이터 저장이 가능합니다.
 
 + # 재귀 함수
@@ -624,7 +631,37 @@ class MultiDimension
 
 함수가 자신을 호출하여 재귀하는 함수를 재귀함수라고 합니다.
 
+함수가 자신을 호출할 경우, 무한히 반복되므로 일정 조건에서만 호출해야합니다.
 
+## 재귀 함수의 구현
+
+```cs
+
+using System; // System 네임스페이스 참조
+
+class RecursiveFunction
+{
+    public static void Main(string[] args)
+    {
+        ArithmeticSequence(0, 3, 20);
+    }
+
+    static void ArithmeticSequence(int current, int commonDiff, int max)
+    {
+        if (current > max) return;
+        
+        Console.Write(current + " ");
+        ArithmeticSequence(current + commonDiff, commonDiff, max);
+    }
+}
+
+/*
+    실행 결과 : 0 3 6 9 12 15 18 
+*/
+
+```
+
+위 예제는 재귀 함수를 이용하여 등차수열을 출력하는 코드입니다. 재귀 함수를 이용하여 간단한 반복을 쉽게 구현할 수 있습니다.
 
 + # 응용 문법 - 1
 > 응용 문법 1 부제
