@@ -684,10 +684,78 @@ class HelloWorld
     >당신이 원하는 자료형
 
     struct, 즉 구조체는 사용자 정의 자료형입니다.  
-    int, float 등과 같이 기본적으로 제공되는 자료형이 아닌 사용자가 원하는 형식의 자료형을 만들기 위해서 사용됩니다.
-
-    아래의 예제는 Student라는 자료형을 구조체로 정의한 것 입니다.
+    int, float 등과 같이 기본적으로 제공되는 자료형이 아닌 사용자가 원하는 형식의 자료형을 만들기 위해서 사용됩니다.  
+      
+    아래의 예제는 Student라는 자료형을 구조체로 정의한 것 입니다.  
+    ```cs
+    struct Student
+    {
+        public string name; //학생의 이름
+        public int number; //학생의 학번
+        public int grade; //학생의 학년
+        public int class; //학생의 반
+    }      
     ```
+    구조체 안에 원하는 변수를 마음껏 선언하여 사용할 수 있습니다.  
+      
+    아래의 예제는 위에서 선언한 구조체를 사용하는 예제입니다.
+    ```cs
+    class Program
+    {
+        struct Student
+        {
+            public string name; //학생의 이름
+            public int number; //학생의 학번
+            public int grade; //학생의 학년
+            public int class; //학생의 반
+        }      
+
+        static void Main(string[] args)
+        {
+            Student student1, student2;
+
+            student1.name = "남상현"; //이름은 남상현
+            student1.number = 1; //번호는 1번
+            student1.grade = 2; //학년은 2학년
+            student1.class = 3; // 반은 3반
+
+            student2.name = "손환주"; //이름은 손환주
+            student2.number = 6; //번호는 6번
+            student2.grade = 1; //학년은 1학년
+            student2.class = 1; // 반은 1반
+
+            Console.Write("이름 : " + student1.name + ", ");
+            Console.Write("번호 : " + student1.number + "번, ");
+            Console.Write("학년 : " + student1.grade + "학년, ");
+            Console.WriteLine("반 : " + student1.class + "반");
+
+            Console.Write("이름 : " + student2.name + ", ");
+            Console.Write("번호 : " + student2.number + "번, ");
+            Console.Write("학년 : " + student2.grade + "학년, ");
+            Console.WriteLine("반 : " + student2.class + "반");
+        }
+    }
+    ```
+    <details>  
+        <summary>출력 결과</summary>  
+
+        이름 : 남상현, 번호 : 1번, 학년 : 2학년, 반 : 3반
+        이름 : 손환주, 번호 : 6번, 학년 : 1학년, 반 : 1반
+    </details>  
+
+    구조체 안에 있는 변수에 접근할 때는 `.`을 사용합니다.  
+      
+    c#의 구조체에는 다음과 같은 특징들이 존재합니다.  
+      
+    - C# 구조체에 메소드, 필드, 속성등을 가질 수 있습니다.  
+    - C# 구조체에 생성자를 정의할 수 있습니다.  
+    - C# 프로그램에서 new 연산자를 이용하여 struct 객체를 생성할 수 있습니다.  
+    - C# 구조체에 기본(Default) 생성자를 정의할 수 없습니다.  
+    - C# 구조체에 소멸자를 정의할 수 없습니다.  
+    - C# 구조체는 다른 구조체나 클래스의 기본 구조체(상속하기 위한)가 될 수 없습니다.  
+      
+    위에서 나온 생성자, 소멸자, 상속 등의 개념은 나중에 클래스를 배울 때 더 자세히 다룰 예정이니, 지금은 이런게 있다 정도만 알아두시면 될 것 같습니다.
+
 ---
 # 응용 문법
 > 응용 문법 설명
