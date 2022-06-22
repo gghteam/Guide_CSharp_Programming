@@ -1000,6 +1000,151 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
             goto 키워드는 사용은 정말 편리해보이지만 코드의 흐름을 파악하기 힘들다는 큰 단점이 존재합니다.  
             때문에 goto 키워드는 사용하지 않는 것이 좋습니다.
 
++ # enum
+    >상수를 의미있는 단어로 나타내고 싶을 때  
+      
+    enum을 한글로는 열거형 이라고 부릅니다.  
+      
+    그 말대로 enum은 열거형 상수들을 알아보기 쉽게 표현하기 위한 키워드로, 상수 숫자들을 의미있는 단어로 표현하고 싶을 때 주로 사용합니다.  
+      
+    enum을 사용하게 되면 일반적인 상수를 사용하는 것보다 코드의 가독성이 높아집니다.  
+      
+    그러면 enum을 사용하는 방법을 알아보도록 하겠습니다.  
+    ```cs
+    enum Color
+    {
+        RED,
+        BLUE,
+        YELLOW,
+        GREEN,
+    }
+    ```
+    위의 예제는 Color라는 enum을 정의한 예시입니다.  
+    맨 위에 선언한 값인 RED는 0의 값을 갖고, 아래의 값들은 차례대로 1, 2, 3의 값을 갖게 됩니다.  
+      
+    ```cs
+    using System;
+
+    class KeywordEnum
+    {
+        enum Color
+        {
+            RED,
+            BLUE,
+            YELLOW = 5,
+            GREEN = 10,
+        }
+
+        public static void Main(string[] args)
+        {
+            Color color;
+            
+            // enum 타입에 값을 대입하는 방법
+            color = Color.YELLOW;
+
+            // enum 타입을 형변환 하는 방법
+            int colorValue = (int)color; 
+
+            if (color == Color.YELLOW) // enum 타입을 비교하는 방법
+            {
+                Console.WriteLine(Color.YELLOW);
+            }
+        }
+    }
+    ```
+    <details>  
+        <summary>출력 결과</summary>  
+
+        YELLOW
+    </details>  
+
+    위의 예제에서 enum선언부를 보면 알 수 있듯이 원하는 값에 원하는 숫자를 할당할 수도 있습니다.  
+      
+    enum을 사용하려면 선언한 enum의 이름을 자료형으로 변수를 선언하는 것과 같이 사용하면 됩니다.  
+      
+    값을 대입하고 싶다면 `enum의 이름.값의 이름` 으로 접근하면 됩니다.  
+      
+    enum의 값에 숫자를 넣어놓은 만큼 int 형으로 형변환이 가능합니다.  
+    >단 as 키워드는 사용할 수 없습니다.
+
++ # struct
+    >당신이 원하는 자료형
+
+    struct, 즉 구조체는 사용자 정의 자료형입니다.  
+    int, float 등과 같이 기본적으로 제공되는 자료형이 아닌 사용자가 원하는 형식의 자료형을 만들기 위해서 사용됩니다.  
+      
+    아래의 예제는 Student라는 자료형을 구조체로 정의한 것 입니다.  
+    ```cs
+    struct Student
+    {
+        public string _name; //학생의 이름
+        public int _number; //학생의 학번
+        public int _grade; //학생의 학년
+        public int _class; //학생의 반
+    }      
+    ```
+    구조체 안에 원하는 변수를 마음껏 선언하여 사용할 수 있습니다.  
+      
+    아래의 예제는 위에서 선언한 구조체를 사용하는 예제입니다.
+    ```cs
+    using System;
+
+    class Struct
+    {
+        struct Student
+        {
+            public string _name; //학생의 이름
+            public int _number; //학생의 학번
+            public int _grade; //학생의 학년
+            public int _class; //학생의 반
+        }      
+
+        public static void Main(string[] args)
+        {
+            Student student1, student2;
+
+            student1._name = "남상현"; //이름은 남상현
+            student1._number = 1; //번호는 1번
+            student1._grade = 2; //학년은 2학년
+            student1._class = 3; // 반은 3반
+
+            student2._name = "손환주"; //이름은 손환주
+            student2._number = 6; //번호는 6번
+            student2._grade = 1; //학년은 1학년
+            student2._class = 1; // 반은 1반
+
+            Console.Write("이름 : " + student1._name + ", ");
+            Console.Write("번호 : " + student1._number + "번, ");
+            Console.Write("학년 : " + student1._grade + "학년, ");
+            Console.WriteLine("반 : " + student1._class + "반");
+
+            Console.Write("이름 : " + student2._name + ", ");
+            Console.Write("번호 : " + student2._number + "번, ");
+            Console.Write("학년 : " + student2._grade + "학년, ");
+            Console.WriteLine("반 : " + student2._class + "반");
+        }
+    }
+    ```
+    <details>  
+        <summary>출력 결과</summary>  
+
+        이름 : 남상현, 번호 : 1번, 학년 : 2학년, 반 : 3반
+        이름 : 손환주, 번호 : 6번, 학년 : 1학년, 반 : 1반
+    </details>  
+
+    구조체 안에 있는 변수에 접근할 때는 `.`을 사용합니다.  
+      
+    c#의 구조체에는 다음과 같은 특징들이 존재합니다.  
+      
+    - C# 구조체에 메소드, 필드, 속성등을 가질 수 있습니다.  
+    - C# 구조체에 생성자를 정의할 수 있습니다.  
+    - C# 프로그램에서 new 연산자를 이용하여 struct 객체를 생성할 수 있습니다.  
+    - C# 구조체에 기본(Default) 생성자를 정의할 수 없습니다.  
+    - C# 구조체에 소멸자를 정의할 수 없습니다.  
+    - C# 구조체는 다른 구조체나 클래스의 기본 구조체(상속하기 위한)가 될 수 없습니다.  
+      
+    위에서 나온 생성자, 소멸자, 상속 등의 개념은 나중에 클래스를 배울 때 더 자세히 다룰 예정이니, 지금은 이런게 있다 정도만 알아두시면 될 것 같습니다.
+
 + # 함수
     > 코드의 간략화
 
