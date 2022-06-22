@@ -613,6 +613,81 @@ class HelloWorld
             goto 키워드는 사용은 정말 편리해보이지만 코드의 흐름을 파악하기 힘들다는 큰 단점이 존재합니다.  
             때문에 goto 키워드는 사용하지 않는 것이 좋습니다.
 
++ # enum
+    >상수를 의미있는 단어로 나타내고 싶을 때  
+      
+    enum을 한글로는 열거형 이라고 부릅니다.  
+      
+    그 말대로 enum은 열거형 상수들을 알아보기 쉽게 표현하기 위한 키워드로, 상수 숫자들을 의미있는 단어로 표현하고 싶을 때 주로 사용합니다.  
+      
+    enum을 사용하게 되면 일반적인 상수를 사용하는 것보다 코드의 가독성이 높아집니다.  
+      
+    그러면 enum을 사용하는 방법을 알아보도록 하겠습니다.  
+    ```cs
+    enum Color
+    {
+        RED,
+        BLUE,
+        YELLOW,
+        GREEN,
+    }
+    ```
+    위의 예제는 Color라는 enum을 정의한 예시입니다.  
+    맨 위에 선언한 값인 RED는 0의 값을 갖고, 아래의 값들은 차례대로 1, 2, 3의 값을 갖게 됩니다.  
+      
+    ```cs
+    class Program
+    {
+        enum Color
+        {
+            RED,
+            BLUE,
+            YELLOW = 5,
+            GREEN = 10,
+        }
+
+        static void Main(string[] args)
+        {
+            Color color;
+            
+            // enum 타입에 값을 대입하는 방법
+            color = Color.YELLOW;
+
+            // enum 타입을 형변환 하는 방법
+            int colorValue = (int)color; 
+
+            if (color == Color.YELLOW) // enum 타입을 비교하는 방법
+            {
+                Console.WriteLine(Color.YELLOW);
+            }
+        }
+    }
+    ```
+    <details>  
+        <summary>출력 결과</summary>  
+
+        5
+    </details>  
+
+    위의 예제에서 enum선언부를 보면 알 수 있듯이 원하는 값에 원하는 숫자를 할당할 수도 있습니다.  
+      
+    enum을 사용하려면 선언한 enum의 이름을 자료형으로 변수를 선언하는 것과 같이 사용하면 됩니다.  
+      
+    값을 대입하고 싶다면 `enum의 이름.값의 이름` 으로 접근하면 됩니다.  
+      
+    enum의 값에 숫자를 넣어놓은 만큼 int 형으로 형변환이 가능합니다.  
+    >단 as 키워드는 사용할 수 없습니다.  
+      
+    YELLOW의 값을 5로 정의해놓았기 때문에 출력값 또한 5가 출력되게 됩니다.
+
++ # struct
+    >당신이 원하는 자료형
+
+    struct, 즉 구조체는 사용자 정의 자료형입니다.  
+    int, float 등과 같이 기본적으로 제공되는 자료형이 아닌 사용자가 원하는 형식의 자료형을 만들기 위해서 사용됩니다.
+
+    아래의 예제는 Student라는 자료형을 구조체로 정의한 것 입니다.
+    ```
 ---
 # 응용 문법
 > 응용 문법 설명
