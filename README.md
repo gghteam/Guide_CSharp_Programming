@@ -1103,11 +1103,13 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
 
         대리자 변수는 여러 함수를 저장할 수 있습니다. 추가할 때는 += 연산자를 사용하고, 저장된 함수를 제거할 때는 -= 연산자를 이용합니다.
 
-    + ## 무명 함수
+    + ## 익명 함수
 
-        무명 함수는 이름을 명명하지 않은 함수를 만드는 것입니다. 
+        익명 함수는 이름을 명명하지 않은 함수를 만드는 것입니다.
 
-        delegate(매개변수 목록) { (내용) } 형식으로 작성합니다.
+        함수를 명명하여 작성하는 것 보다 간결해집니다.
+
+        delegate((매개변수 목록)) { (내용) } 형식으로 작성합니다.
 
         매개변수가 없을 경우, delegate { (내용) } 으로 생략 가능합니다.
 
@@ -1120,7 +1122,7 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
 
             public static void Main(string[] args)
             {
-                Func func = delegate(int a, int b) { return a + b; }; // a + b 를 반환하는 무명 함수.
+                Func func = delegate(int a, int b) { return a + b; }; // a + b 를 반환하는 익명 함수.
 
                 Console.WriteLine(func(3, 2));
             }
@@ -1185,7 +1187,8 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
 
             public static void Main(string[] args)
             {
-                Action action = delegate { Console.WriteLine("함수가 끝났습니다"); };
+                Action action = delegate { Console.WriteLine("함수가 끝났습니다"); }; // 콜백을 위한 익명 함수를 저장.
+                Function(action); // action을 인수로 Function 호출.
             }
 
             static void Function(Action callBack)
@@ -1296,5 +1299,64 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
         </details>
 
         위 예제는 재귀 함수를 이용하여 등차수열을 출력하는 코드입니다. 재귀 함수를 이용하여 간단한 반복을 쉽게 구현할 수 있습니다.
+
++ # 람다 식
+    > 간소화 된 익명 함수
+
+    람다 식은 delegate 키워드를 이용한 익명 함수의 간소화 된 것이라고 할 수 있습니다.
+
+    + ## 람다 식의 구현과 사용
+    
+        ((매개변수 목록)) => { (내용) } 형식으로 작성되며 기존 익명 함수와 완전히 동일하게 사용됩니다.
+
+        ```cs
+        using System;
+
+        class Lambda
+        {
+            delegate void Action();
+
+            public static void Main(string[] args)
+            {
+                Action action = () => { Console.WriteLine("Hello World!"); };
+                action();
+            }
+        }
+        ```
+
+        <details>
+            <summary>출력 결과</summary>
+
+            Hello World!
+        </details>
+
+        자료형 유추로 매개변수의 자료형을 생략할 수 있고, 반환 자료형이 void가 아니면 return과 블록을 생략할 수 있습니다.
+
+        매개변수가 한 개일 경우, 괄호도 생략 가능합니다.
+
+        ```cs
+        using System;
+
+        class Lambda
+        {
+            delegate int Func(int a, int b);
+            delegate int Function(int a);
+
+            public static void Main(string[] args)
+            {
+                Func func = (a, b) => a + b;
+                Function function = a => a + 1;
+                Console.WriteLine(func(4, 2));
+                Console.WriteLine(function(4));
+            }
+        }
+        ```
+
+        <details>
+            <summary>출력 결과</summary>
+
+            6
+            5
+        </details>
 
 ---
