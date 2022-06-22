@@ -1109,6 +1109,8 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
 
         delegate(매개변수 목록) { (내용) } 형식으로 작성합니다.
 
+        매개변수가 없을 경우, delegate { (내용) } 으로 생략 가능합니다.
+
         ```cs
         using System;
 
@@ -1118,7 +1120,7 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
 
             public static void Main(string[] args)
             {
-                Func func = delegate(int a, int b) { return a + b; };
+                Func func = delegate(int a, int b) { return a + b; }; // a + b 를 반환하는 무명 함수.
 
                 Console.WriteLine(func(3, 2));
             }
@@ -1144,9 +1146,9 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
 
             public static void Main(string[] args)
             {
-                Action action = Sum;
-                action += Multiply;
-                action(4, 5);
+                Action action = Sum; // Sum 함수를 저장.
+                action += Multiply; // Multiply 함수를 저장.
+                action(4, 5); // action 호출.
             }
 
             static void Sum(int a, int b)
@@ -1170,7 +1172,36 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
     
     + ## 콜백
 
-    
+        콜백이란 함수를 다른 함수의 인수로 넘겨주는 것을 말합니다.
+
+        대리자를 이용하면 함수를 인수로서 다른 함수를 호출하는 것이 가능합니다.
+
+        ```cs
+        using System;
+
+        class CallBack
+        {
+            delegate void Action();
+
+            public static void Main(string[] args)
+            {
+                Action action = delegate { Console.WriteLine("함수가 끝났습니다"); };
+            }
+
+            static void Function(Action callBack)
+            {
+                Console.WriteLine("함수 실행");
+                callBack();
+            }
+        }
+        ```
+
+        <details>
+            <summary>출력 결과</summary>
+
+            함수 실행
+            함수가 끝났습니다.
+        </details>
 
 ---
 
