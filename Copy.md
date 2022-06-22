@@ -666,7 +666,7 @@ class HelloWorld
     <details>  
         <summary>출력 결과</summary>  
 
-        5
+        YELLOW
     </details>  
 
     위의 예제에서 enum선언부를 보면 알 수 있듯이 원하는 값에 원하는 숫자를 할당할 수도 있습니다.  
@@ -676,9 +676,7 @@ class HelloWorld
     값을 대입하고 싶다면 `enum의 이름.값의 이름` 으로 접근하면 됩니다.  
       
     enum의 값에 숫자를 넣어놓은 만큼 int 형으로 형변환이 가능합니다.  
-    >단 as 키워드는 사용할 수 없습니다.  
-      
-    YELLOW의 값을 5로 정의해놓았기 때문에 출력값 또한 5가 출력되게 됩니다.
+    >단 as 키워드는 사용할 수 없습니다.
 
 + # struct
     >당신이 원하는 자료형
@@ -690,10 +688,10 @@ class HelloWorld
     ```cs
     struct Student
     {
-        public string name; //학생의 이름
-        public int number; //학생의 학번
-        public int grade; //학생의 학년
-        public int class; //학생의 반
+        public string _name; //학생의 이름
+        public int _number; //학생의 학번
+        public int _grade; //학생의 학년
+        public int _class; //학생의 반
     }      
     ```
     구조체 안에 원하는 변수를 마음껏 선언하여 사용할 수 있습니다.  
@@ -704,35 +702,35 @@ class HelloWorld
     {
         struct Student
         {
-            public string name; //학생의 이름
-            public int number; //학생의 학번
-            public int grade; //학생의 학년
-            public int class; //학생의 반
+            public string _name; //학생의 이름
+            public int _number; //학생의 학번
+            public int _grade; //학생의 학년
+            public int _class; //학생의 반
         }      
 
         static void Main(string[] args)
         {
             Student student1, student2;
 
-            student1.name = "남상현"; //이름은 남상현
-            student1.number = 1; //번호는 1번
-            student1.grade = 2; //학년은 2학년
-            student1.class = 3; // 반은 3반
+            student1._name = "남상현"; //이름은 남상현
+            student1._number = 1; //번호는 1번
+            student1._grade = 2; //학년은 2학년
+            student1._class = 3; // 반은 3반
 
-            student2.name = "손환주"; //이름은 손환주
-            student2.number = 6; //번호는 6번
-            student2.grade = 1; //학년은 1학년
-            student2.class = 1; // 반은 1반
+            student2._name = "손환주"; //이름은 손환주
+            student2._number = 6; //번호는 6번
+            student2._grade = 1; //학년은 1학년
+            student2._class = 1; // 반은 1반
 
-            Console.Write("이름 : " + student1.name + ", ");
-            Console.Write("번호 : " + student1.number + "번, ");
-            Console.Write("학년 : " + student1.grade + "학년, ");
-            Console.WriteLine("반 : " + student1.class + "반");
+            Console.Write("이름 : " + student1._name + ", ");
+            Console.Write("번호 : " + student1._number + "번, ");
+            Console.Write("학년 : " + student1._grade + "학년, ");
+            Console.WriteLine("반 : " + student1._class + "반");
 
-            Console.Write("이름 : " + student2.name + ", ");
-            Console.Write("번호 : " + student2.number + "번, ");
-            Console.Write("학년 : " + student2.grade + "학년, ");
-            Console.WriteLine("반 : " + student2.class + "반");
+            Console.Write("이름 : " + student2._name + ", ");
+            Console.Write("번호 : " + student2._number + "번, ");
+            Console.Write("학년 : " + student2._grade + "학년, ");
+            Console.WriteLine("반 : " + student2._class + "반");
         }
     }
     ```
