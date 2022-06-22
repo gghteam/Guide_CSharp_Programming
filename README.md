@@ -1058,6 +1058,120 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
         위 예제는 함수의 구현과 호출 방법입니다.
         두 int형 값반을 더하여 환하는 Sum함수와 제곱값을 반환하는 Square함수가 제시되어 있습니다.
 
++ # 대리자
+    > 함수의 저장
+
+    대리자는 함수를 변수로서 저장하는 역할을 합니다.
+    
+    + ## 대리자의 구현
+
+        delegate (자료형) (대리자 명)(매개변수 목록); 의 형식으로 대리자 자료형을 만들 수 있습니다.
+        이렇게 만든 대리자 자료형으로 변수를 생성하여 함수를 저장할 수 있습니다.
+
+        ```cs
+        using System;
+
+        class Delegate
+        {
+            delegate void Calc(int a, int b);
+
+            public static void Main(string[] args)
+            {
+                Calc calc = Sum; // Sum 함수 저장.
+                calc += Multiply; // Multiply 함수 저장.
+                calc -= Multiply; // Multiply 함수 제거.
+                calc(5, 3);
+            }
+
+            static void Sum(int a, int b)
+            {
+                Console.WriteLine(a + b);
+            }
+
+            static void Multiply(int a, int b)
+            {
+                Console.WriteLine(a * b);
+            }
+        }
+        ```
+
+        <details>
+            <summary>출력 결과</summary>
+
+            8
+        </details>
+
+        대리자 변수는 여러 함수를 저장할 수 있습니다. 추가할 때는 += 연산자를 사용하고, 저장된 함수를 제거할 때는 -= 연산자를 이용합니다.
+
+    + ## 무명 함수
+
+        무명 함수는 이름을 명명하지 않은 함수를 만드는 것입니다. 
+
+        delegate(매개변수 목록) { (내용) } 형식으로 작성합니다.
+
+        ```cs
+        using System;
+
+        class AnonymousFunction
+        {
+            delegate int Func(int a, int b);
+
+            public static void Main(string[] args)
+            {
+                Func func = delegate(int a, int b) { return a + b; };
+
+                Console.WriteLine(func(3, 2));
+            }
+        }
+        ```
+
+        <details>
+            <summary>출력 결과</summary>
+
+            5
+        </details>
+
+    + ## 대리자의 사용
+
+        대리자 변수를 함수처럼 사용하여 저장된 함수들을 호출할 수 있습니다.
+    
+        ```cs
+        using System;
+
+        class UseDelegate
+        {
+            delegate void Action(int a, int b);
+
+            public static void Main(string[] args)
+            {
+                Action action = Sum;
+                action += Multiply;
+                action(4, 5);
+            }
+
+            static void Sum(int a, int b)
+            {
+                Console.WriteLine(a + b);
+            }
+
+            static void Multiply(int a, int b)
+            {
+                Console.WriteLine(a * b);
+            }
+        }
+        ```
+
+        <details>
+            <summary>출력 결과</summary>
+
+            9
+            20
+        </details>
+    
+    + ## 콜백
+
+    
+
 ---
 
 # 응용 문법
