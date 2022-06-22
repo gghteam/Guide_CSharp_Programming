@@ -254,8 +254,7 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
         변수와 상수가 제대로 동작하는지 직접 출력하여 확인합시다.
 
         ```cs
-
-        using System; // System 네임스페이스 참조
+        using System;
 
         class Variable
         {
@@ -395,8 +394,7 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
         new 연산자는 데이터를 저장하기 위한 공간을 할당하는 연산자 입니다.
 
         ```cs
-
-        using System; // System 네임스페이스 참조
+        using System;
 
         class NewOperator
         {
@@ -406,7 +404,6 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
                 Console.Write(a); // a에 저장된 값을 출력.
             }
         }
-
         ```
 
         <details>
@@ -420,8 +417,7 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
         저장 공간을 할당하는 구문을 생략한 것입니다.
 
         ```cs
-
-        using System; // System 네임스페이스 참조
+        using System;
 
         class NewOperator
         {
@@ -432,7 +428,6 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
                 Console.Write(a); // a에 저장된 값을 출력.
             }
         }
-
         ```
 
         <details>
@@ -457,8 +452,7 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
         배열의 공간을 할당하는데는 일반자료형과는 조금 다른 형식을 사용합니다.
 
         ```cs
-
-        using System; // System 네임스페이스 참조
+        using System;
 
         class ArrayAllocate
         {
@@ -468,7 +462,6 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
                 Console.Write(array.Length);
             }
         }
-
         ```
 
         <details>
@@ -491,8 +484,7 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
 
 
         ```cs
-
-        using System; // System 네임스페이스 참조
+        using System;
 
         class ArrayIndex
         {
@@ -506,7 +498,6 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
                 Console.WriteLine(array[1]); // array의 두 번째 공간에 저장된 2를 출력
             }
         }
-
         ```
 
         <details>
@@ -537,20 +528,31 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
         if 문은 만약 조건식이 `참`일 경우 코드블럭 안쪽에 있는 코드를 실행하고, `거짓`일 경우 코드를 실행하지 않습니다.   
 
         아래의 코드는 간단한 if문의 예제입니다.
-        ```cs
-        int a = 10;
-        int b = 20;
 
-        if(a < b) //a가 b보다 작으므로 참
+        ```cs
+        using System;
+
+        class If
         {
-            Console.Write("Hellow if!"); //조건식이 참이기 때문에 실행되는 코드
+            public static void Main(string[] args)
+            {
+                int a = 10;
+                int b = 20;
+
+                if(a < b) //a가 b보다 작으므로 참
+                {
+                    Console.Write("Hellow if!"); //조건식이 참이기 때문에 실행되는 코드
+                }
+            }
         }
         ```
+
         <details>  
             <summary>출력 결과</summary>  
 
             Hellow if!
         </details>  
+
         앞으로도 출력 결과를 가려놓을테니, 열어보기 전에 어떤 출력값이 나올지 생각해봅시다.
 
         위의 코드는 만약 a가 b보다 작다면 코드블럭 안쪽에 있는 코드를 실행하도록 작성한 코드입니다.   
@@ -581,18 +583,27 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
 
         else문에 대해 어느정도 감이 잡히셨다면 아래의 예제를 살펴보겠습니다.
         ```cs
-        int a = 10;
-        int b = 20;
+        using System;
 
-        if(a > b) //a가 b보다 작으므로 거짓
+        class Else
         {
-            Console.Write("Hellow if!"); //a가 b보다 작기 때문에 실행되지 않는 코드
-        }
-        else
-        {
-            Console.Write("Hellow else!"); //위의 조건식이 참이 아니기 때문에 실행되는 코드
+            public static void Main(string[] args)
+            {
+                int a = 10;
+                int b = 20;
+
+                if(a > b) //a가 b보다 작으므로 거짓
+                {
+                    Console.Write("Hellow if!"); //a가 b보다 작기 때문에 실행되지 않는 코드
+                }
+                else
+                {
+                    Console.Write("Hellow else!"); //위의 조건식이 참이 아니기 때문에 실행되는 코드
+                }
+            }
         }
         ```
+
         <details>  
             <summary>출력 결과</summary>  
 
@@ -630,22 +641,31 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
 
         else if문은 말로 설명하는 것보다 예제를 보는게 훨씬 더 이해하기 쉽습니다.
         ```cs
-        int a = 10;
-        int b = 20;
+        using System;
 
-        if(a == b) //a가 b와 같지 않으므로 거짓
+        class ElseIf
         {
-            Console.Write("Hellow if!"); //a와 b가 다르기 때문에 실행되지 않는 코드
-        }
-        else if(a < b) //a가 b보다 작으므로 참
-        {
-            Console.Write("Hellow else if!"); //위의 조건식이 거짓이고 조건식이 참이기 때문에 실행되는 코드
-        }
-        else
-        {
-            Console.Write("Hellow else!"); //위의 조건식이 참이기 때문에 실행되지 않는 코드
+            public static void Main(string[] args)
+            {
+                int a = 10;
+                int b = 20;
+
+                if(a == b) //a가 b와 같지 않으므로 거짓
+                {
+                    Console.Write("Hellow if!"); //a와 b가 다르기 때문에 실행되지 않는 코드
+                }
+                else if(a < b) //a가 b보다 작으므로 참
+                {
+                    Console.Write("Hellow else if!"); //위의 조건식이 거짓이고 조건식이 참이기 때문에 실행되는 코드
+                }
+                else
+                {
+                    Console.Write("Hellow else!"); //위의 조건식이 참이기 때문에 실행되지 않는 코드
+                }
+            }
         }
         ```
+
         <details>  
             <summary>출력 결과</summary>  
 
@@ -686,25 +706,34 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
         만약 case의 값이 `모두 조건식의 결과와 일치하지 않는다면`, default 키워드 밑에 적혀있는 `코드를 실행`합니다.  
         >default 키워드를 사용하지 않고 case만 사용해도 switch문은 정상적으로 작동`합니다.  
         ```cs
-        int a = 10;
-        int b = 20;
+        using System;
 
-        switch(b - a)
+        class Switch
         {
-            case 0:
-                Console.Write("0");
-                break;
-            case 10:
-                Console.Write("10");
-                break;
-            case 20:
-                Console.Write("20");
-                break;
-            default:
-                Console.Write("Default");
-                break;
+            public static void Main(string[] args)
+            {
+                int a = 10;
+                int b = 20;
+
+                switch(b - a)
+                {
+                    case 0:
+                        Console.Write("0");
+                        break;
+                    case 10:
+                        Console.Write("10");
+                        break;
+                    case 20:
+                        Console.Write("20");
+                        break;
+                    default:
+                        Console.Write("Default");
+                        break;
+                }
+            }
         }
         ```
+
         <details>  
             <summary>출력 결과</summary>  
 
@@ -717,7 +746,6 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
         두번째 case에서 코드를 실행하고 `break`키워드를 만났기 때문에 `switch문을 빠져나와` 세번째 case는 `검사하지 않습니다`.  
           
         다음 장 부터는 반복문을 살펴보도록 하겠습니다.
-
 + # 반복문
     >복사 붙여넣기에 지친 당신에게
 
@@ -740,16 +768,25 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
           
         아래의 예제는 a가 5보다 작을동안 a의 값을 콘솔에 출력하는 예제입니다.
         ```cs
-        int a = 0;
+        using System;
 
-        while(a < 5)
+        class While
         {
-            Console.Write(a);
-            a++;
-        }
+            public static void Main(string[] args)
+            {
+                int a = 0;
 
-        Console.Write("Exit");
+                while(a < 5)
+                {
+                    Console.Write(a);
+                    a++;
+                }
+
+                Console.Write("Exit");
+            }
+        }
         ```
+
         <details>  
             <summary>출력 결과</summary>  
 
@@ -767,64 +804,201 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
         그러므로 콘솔에 1이 출력되고 이후 a값이 또다시 1증가합니다.
 
         위의 과정을 반복하며 a가 5보다 작지 않으면(같거나 크면) while문을 나오게 됩니다.  
-
     + ## for문
-
         위의 while문 예제에서 a값을 증가시키면서 조건식을 거짓으로 만들어 반복문을 벗어났습니다.  
         for문은 이러한 반복을 조금 더 편하게 해주는 반복문입니다.
 
         for문의 기본형식은 아래와 같습니다.
         ```cs
-        for(자료형 변수명 = 초기화값; 조건식;증감식)
+        for(자료형 변수명 = 초기화값; 조건식; 증감식)
         {
             //실행할 코드
         }
         ```
-        이렇게 보면 이해가 쉽지 않으니 아래의예제를 보면 좋을 것 같습니다.
+        이렇게 보면 이해가 쉽지 않으니 아래의 예제를 보면 좋을 것 같습니다.
         ```cs
-        for(int i = 0; i < 5; i++)
-        {
-            Console.Write(i);
-        }
+        using System;
 
-        Console.Write("Exit");
+        class For
+        {
+            public static void Main(string[] args)
+            {
+                for(int i = 0; i < 5; i++)
+                {
+                    Console.Write(i);
+                }
+
+                Console.Write("Exit");
+            }
+        }
         ```
+
         <details>  
             <summary>출력 결과</summary>  
 
             01234Exit
         </details>  
         눈치채신분들도 있겠지만 위의 예제는 while문의 마지막 예제를 for문으로 작성한 코드입니다.  
-            
+        
         for문을 차근차근 살펴보도록 하겠습니다.  
-            
+        
         처음에 int형식의 i 값을 0으로 초기화 하였습니다.  
         이후 반복을 돌 때마다 조건식인 i < 5의 참 거짓 여부를 확인하면서, 증감식인 i++를 실행해줍니다.  
-        루프를 한번씩 돌때마다 i값이 1씩 증가했으니 5번의 루프를 들게되면 i의 값은 5로 i < 5가 거짓이 됩니다.  
+        루프를 한번씩 돌때마다 i값이 1씩 증가했으니 5번의 반복을 들게되면 i의 값은 5로 i < 5가 거짓이 됩니다.  
         그러므로 총 5번 반복이 되고 for문을 빠져나와 마지막에는 "Exit"가 출력되게 됩니다.  
-            
+          
         그렇다면 아래 예제의 출력값은 어떻게 될까요?  
         바로 출력값을 열어보기보단 충분한 생각을 해본 후 열어보는걸 추천합니다.  
         ```cs
-        for(int i = 0; i < 5; i++)
-        {
-            Console.Write(1);
-        }
+        using System;
 
-        Console.Write(1);
+        class ForOne
+        {
+            public static void Main(string[] args)
+            {
+                for(int i = 0; i < 5; i++)
+                {
+                    Console.Write(1);
+                }
+
+                Console.Write(1);
+            }
+        }
         ```
+
         <details>  
             <summary>출력 결과</summary>  
 
             111111
         </details>  
-        위의 예제에서는 루프를 돌 때마다 변수인 i값이 아닌 리터럴 값인 1을 출력했습니다.
+        위의 예제에서는 반복을 돌 때마다 변수인 i값이 아닌 리터럴 값인 1을 출력했습니다.
         따라서 for문이 5번 실행되어 1이 5번 찍힌 후 for문 밖에 있는 문장때문에 1이 한번 더 찍힙니다.  
         그래서 출력값에 1이 6번 찍히는 것입니다.  
 
-        반복문은 응용파트에서 더 자세히 알아보도록 하고 다음은 Enum에 대해서 알아보도록 합시다.  
+        다음은 반복문에서 주로 사용하는 키워드에 대해서 알아보도록 합시다.  
+    + ## break, continue, goto
+        break, continue, goto키워드 모두 반복문을 제어할 때 사용하는 키워드입니다.
 
-    + ## break, contine, goto
+        하나하나 차근차근 알아가 보도록 하겠습니다.
+        
+        + ### break
+            break는 언제든지 반복문을 중단시킬 수 있는 키워드 입니다.  
+            switch문에서 break 키워드를 만나면 switch문을 종료한다고 설명했었습니다.  
+            반복문에서도 마찬가지로 반복을 돌다가 break 키워드를 만나면 반복문을 빠져나오게 됩니다.  
+            
+            이해를 돕기위해 예제 하나를 보겠습니다.
+            ```cs
+            using System;
+
+            class Break
+            {
+                public static void Main(string[] args)
+                {
+                    for(int i = 0; i < 5; i++)
+                    {
+                        if(i == 2)
+                        {
+                            break;
+                        }
+
+                        Console.Write(i);
+                    }
+
+                    Console.Write("Exit");
+                }
+            }
+            ```
+
+            <details>  
+                <summary>출력 결과</summary>  
+
+                01Exit
+            </details>  
+
+            위의 예제는 i가 2일때 반복을 종료하고 "Exit"을 출력하는 코드입니다.    
+            원래는 i가 5보다 작을때까지 반복을 돌아야 하지만, if문에서 i가 2일때 break를 해주었기 때문에 0, 1까지만 출력하고 반복을 종료하는 것입니다.
+
+            break 다음에는 비슷하지만 얼핏 다른 continue 키워드에 대해서 알아봅시다.
+
+        + ### continue
+            break가 반복문을 즉시 종료시키는 키워드라면 continue는 continue 키워드 아래의 문장을 실행하지 않고, 다음 반복으로 넘어가는 키워드 입니다.  
+              
+            마찬가지로 예제를 보도록 하겠습니다.
+            ```cs
+            using System;
+
+            class Continue
+            {
+                public static void Main(string[] args)
+                {
+                    for(int i = 1; i < 5; i++)
+                    {
+                        if(i % 2 == 0)
+                        {
+                            continue;
+                        }
+
+                        Console.Write(i);
+                    }
+                }
+            }
+            ```
+
+            <details>  
+                <summary>출력 결과</summary>  
+
+                13
+            </details>  
+
+            위의 예제는 1부터 4까지의 숫자 중 홀수만을 출력하는 예제입니다.  
+            짝수일 경우 continue키워드를 만나 출력하는 코드를 실행하지 않게 됩니다.  
+            그렇기에 홀수인 숫자만 출력되는 것입니다.
+
+        + ### goto
+            goto키워드는 위에서 나온 키워드들과 사용법이 많이 다릅니다.  
+            또한 사용하는것을 추천하지 않는 키워드입니다.  
+
+            우선 goto 키워드의 기본적인 형식은 아래와 같습니다.
+            ```cs
+            goto 레이블명;
+
+            레이블명:
+            //실행할 코드
+            ```
+            >여기서 레이블이란 goto키워드로 가고싶은 지점에 임의의 이름을 부여한다고 생각하시면 됩니다.
+
+            아래의 예제는 위에서 알아본 break 키워드의 예제를 goto 키워드로 구현한 것입니다.  
+            ```cs
+            using System;
+
+            class Goto
+            {
+                public static void Main(string[] args)
+                {
+                    for(int i = 0; i < 5; i++)
+                    {
+                        if(i == 2)
+                        {
+                            goto EXIT;
+                        }
+
+                        Console.Write(i);
+                    }
+
+                    EXIT :
+                    Console.Write("Exit");
+                }
+            }
+            ```
+
+            <details>  
+                <summary>출력 결과</summary>  
+
+                01Exit
+            </details>  
+            
+            goto 키워드는 사용은 정말 편리해보이지만 코드의 흐름을 파악하기 힘들다는 큰 단점이 존재합니다.  
+            때문에 goto 키워드는 사용하지 않는 것이 좋습니다.
 
 + # 함수
     > 코드의 간략화
@@ -852,8 +1026,7 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
     + ## 함수의 구현
 
         ```cs
-
-        using System; // System 네임스페이스 참조
+        using System;
 
         class Function
         {
@@ -874,7 +1047,6 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
                 return a * a; // a * a의 값을 반환.
             }
         }
-
         ```
 
         <details>
@@ -909,8 +1081,7 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
     + ## 다차원 배열의 구현
 
         ```cs
-
-        using System; // System 네임스페이스 참조
+        using System;
 
         class MultiDimension
         {
@@ -927,7 +1098,6 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
                 Console.Write(dimension[2, 1]); // 10을 출력
             }
         }
-
         ```
 
         <details>
@@ -955,8 +1125,7 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
     + ## 재귀 함수의 구현
 
         ```cs
-
-        using System; // System 네임스페이스 참조
+        using System;
 
         class RecursiveFunction
         {
@@ -973,7 +1142,6 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
                 ArithmeticSequence(current + commonDiff, commonDiff, max);
             }
         }
-
         ```
 
         <details>
