@@ -24,15 +24,18 @@ C# 프로그래밍 입문
 <summary><a href="#기초-문법"> 2장. 기초 문법 </a></summary>
 <br>
 
-- [주석 <img src="./Images/Easy.png" width=20% height=20% />](#주석)
-- [리터럴 값 <img src="./Images/Easy.png" width=20% height=20% />](#리터럴-값)
-- [자료형 <img src="./Images/Easy.png" width=20% height=20% />](#자료형)
-- [변수와 상수 <img src="./Images/Easy.png" width=20% height=20% />](#변수와-상수)
-- [연산자 <img src="./Images/Easy.png" width=20% height=20% />](#연산자)
-- [배열 <img src="./Images/Easy.png" width=20% height=20% />](#배열)
-- [조건문 <img src="./Images/Easy.png" width=20% height=20% />](#조건문)
-- [반복문 <img src="./Images/Easy.png" width=20% height=20% />](#반복문)
-- [함수 <img src="./Images/Easy.png" width=20% height=20% />](#함수)
+- [주석 <img src="./Images/Easy.png" width=10% height=10% />](#주석)
+- [리터럴 값 <img src="./Images/Easy.png" width=10% height=10% />](#리터럴-값)
+- [자료형 <img src="./Images/Easy.png" width=10% height=10% />](#자료형)
+- [변수와 상수 <img src="./Images/Easy.png" width=10% height=10% />](#변수와-상수)
+- [연산자 <img src="./Images/Easy.png" width=10% height=10% />](#연산자)
+- [배열 <img src="./Images/Easy.png" width=10% height=10% />](#배열)
+- [조건문 <img src="./Images/Easy.png" width=10% height=10% />](#조건문)
+- [반복문 <img src="./Images/Easy.png" width=10% height=10% />](#반복문)
+- [열거형 <img src="./Images/Easy.png" width=10% height=10% />](#열거형)
+- [구조체 <img src="./Images/Easy.png" width=10% height=10% />](#구조체)
+- [함수 <img src="./Images/Easy.png" width=10% height=10% />](#함수)
+- [대리자 <img src="./Images/Easy.png" width=10% height=10% />](#대리자)
 
 </details>
 
@@ -40,8 +43,9 @@ C# 프로그래밍 입문
 <summary><a href="#응용-문법"> 3장. 응용 문법 </a></summary>
 <br>
 
-- [다차원 배열 <img src="./Images/Easy.png" width=20% height=20% />](#다차원-배열)
-- [재귀 함수 <img src="./Images/Easy.png" width=20% height=20% />](#재귀-함수)
+- [다차원 배열 <img src="./Images/Easy.png" width=10% height=10% />](#다차원-배열)
+- [재귀 함수 <img src="./Images/Easy.png" width=10% height=10% />](#재귀-함수)
+- [람다 식 <img src="./Images/Easy.png" width=10% height=10% />](#람다-식)
 
 </details>
 
@@ -1000,10 +1004,10 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
             goto 키워드는 사용은 정말 편리해보이지만 코드의 흐름을 파악하기 힘들다는 큰 단점이 존재합니다.  
             때문에 goto 키워드는 사용하지 않는 것이 좋습니다.
 
-+ # enum
++ # 열거형
     >상수를 의미있는 단어로 나타내고 싶을 때  
       
-    enum을 한글로는 열거형 이라고 부릅니다.  
+    열거형을 enum 이라고 부릅니다.  
       
     그 말대로 enum은 열거형 상수들을 알아보기 쉽게 표현하기 위한 키워드로, 상수 숫자들을 의미있는 단어로 표현하고 싶을 때 주로 사용합니다.  
       
@@ -1067,7 +1071,7 @@ Visual Studio Community 혹은 컴파일러를 사용 가능하다는 전제 하
     enum의 값에 숫자를 넣어놓은 만큼 int 형으로 형변환이 가능합니다.  
     >단 as 키워드는 사용할 수 없습니다.
 
-+ # struct
++ # 구조체
     >당신이 원하는 자료형
 
     struct, 즉 구조체는 사용자 정의 자료형입니다.  
